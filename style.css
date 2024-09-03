@@ -1,0 +1,273 @@
+:root {
+  /* Primary Colors */
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+  /* Light Theme */
+
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  /* Dark Theme */
+
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+
+  /* Font (Weights 400, 700) */
+  --Josefin: "Josefin Sans", sans-serif;
+}
+
+body {
+  position: relative;
+  background-color: var(--Very-Dark-Blue);
+  font-family: var(--Josefin);
+  margin: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.bg_header {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+}
+
+.header {
+  margin-inline: 1em;
+}
+
+.toDo_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2em;
+  color: white;
+}
+
+.create_input {
+  width: 100%;
+  height: 55px;
+  padding: 1.5em;
+  outline: none;
+  border-radius: 7px;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  border: none;
+  color: white;
+  font-family: var(--Josefin);
+  transition: all 0.5s ease-in-out;
+  box-sizing: border-box;
+}
+
+.header_title {
+  text-transform: uppercase;
+  letter-spacing: 7px;
+}
+
+.light_btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.light_mode_icon {
+  width: 26px;
+  height: 26px;
+  transition: width 0.5s, height 0.5s, transform 1s ease-in-out;
+}
+
+.light_mode_icon:hover {
+  width: 40px;
+  height: 40px;
+  transform: rotate(230deg);
+}
+
+main {
+  margin-inline: 1em;
+}
+
+ul {
+  display: flex;
+  flex-direction: column-reverse;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  border-bottom: 1px solid var(--Very-Dark-Grayish-Blue);
+  transition: all 0.5s ease-in-out;
+  /* border-radius: 7px 7px 0 0; */
+  box-sizing: border-box;
+  padding: 1.5em;
+  color: var(--Light-Grayish-Blue);
+}
+
+.delete-btn {
+  cursor: pointer;
+  visibility: hidden;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2em;
+  color: var(--Dark-Grayish-Blue);
+  width: 15px;
+  height: 15px;
+}
+
+li:hover .delete-btn {
+  visibility: visible;
+}
+
+.footer_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+}
+
+.footer_display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 55px;
+  margin-bottom: 2em;
+}
+
+.footer_btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--Dark-Grayish-Blue);
+  font-family: var(--Josefin);
+  font-weight: 700;
+}
+
+.items_count {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clear_complet_btn {
+  display: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--Dark-Grayish-Blue);
+  font-family: var(--Josefin);
+}
+
+.paragraph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.check_box {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-container {
+  cursor: pointer;
+  border: 1px solid var(--Dark-Grayish-Blue);
+  border-radius: 50%;
+  padding: 0.5em;
+}
+
+.check_box.visible {
+  visibility: visible;
+}
+
+.checkbox-container.bg_checkBox {
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border: none;
+}
+
+/* Dragging style__________________________________ */
+
+.drag_items {
+  text-align: center;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+.over {
+  border: 2px dashed #000; /* Style to indicate where the dragged item can be dropped */
+}
+
+/* Add this CSS to your stylesheet */
+.footer_btn {
+  color: #777; /* Default color for all buttons */
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.footer_btn.selected {
+  color: var(--Bright-Blue); /* Highlighted color for the selected button */
+  font-weight: bold; /* Optional: make the selected button bold */
+}
+
+/* Desktop Version */
+
+@media all and (min-width: 1024px) {
+  .header,
+  li,
+  .footer_menu {
+    width: 40%;
+    margin: 0 auto;
+  }
+}
+
+/* Light mode colors */
+
+.light_body {
+  background-color: hsl(0, 0%, 98%);
+  transition: all 0.5s ease-in-out;
+}
+
+.light_input {
+  background-color: hsl(236, 33%, 92%);
+  color: hsl(235, 19%, 35%);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Dark mode styles */
+body.dark_mode .paragraph {
+  color: rgb(202, 205, 232); /* Unchecked item color in dark mode */
+}
+
+body.dark_mode .paragraph.completed {
+  color: hsl(234, 11%, 52%); /* Checked item color in dark mode */
+}
+
+/* Light mode styles */
+body.light_mode .paragraph {
+  color: rgb(72, 75, 106); /* Unchecked item color in light mode */
+}
+
+body.light_mode .paragraph.completed {
+  color: hsl(234, 11%, 52%); /* Checked item color in light mode */
+}

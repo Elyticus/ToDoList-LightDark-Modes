@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon Link -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- Document Title -->
+    <title>Todo app</title>
+  </head>
+
+  <body>
+    <picture class="bg_header">
+      <source
+        media="(max-width: 799px)"
+        width="100%"
+        srcset="./images/bg-mobile-dark.jpg"
+        id="sourceMobileDark"
+      />
+      <source
+        class="hero_home"
+        media="(min-width: 1024px)"
+        srcset="./images/bg-desktop-dark.jpg"
+        id="sourceDesktopDark"
+      />
+
+      <img
+        class="hero_image_main"
+        width="100%"
+        src="./images/bg-desktop-dark.jpg"
+        alt="Hero image"
+        id="sourceImg"
+      />
+    </picture>
+
+    <div class="header">
+      <div class="toDo_header">
+        <h1 class="header_title">Todo</h1>
+        <button id="lightBtn" class="light_btn">
+          <img
+            class="light_mode_icon"
+            src="./images/icon-sun.svg"
+            alt="light mode icon"
+            id="sunIcon"
+          />
+        </button>
+      </div>
+
+      <input
+        class="create_input"
+        type="text"
+        name="create_todo"
+        placeholder="Create a new todo..."
+        id="createTodo"
+      />
+    </div>
+
+    <main>
+      <ul id="displayList">
+        <li class="items_count">
+          <p><span id="itemsCount">0</span> items left</p>
+          <button id="clearBtn" class="clear_complet_btn">
+            Clear Completed
+          </button>
+        </li>
+      </ul>
+
+      <div id="footerMenu" class="footer_menu">
+        <div id="footerDisplay" class="footer_display">
+          <button id="allBtn" class="footer_btn">All</button>
+          <button id="activeBtn" class="footer_btn">Active</button>
+          <button id="completeBtn" class="footer_btn">Completed</button>
+        </div>
+        <!-- <p id="dragItems" class="drag_items">Drag and drop to reorder list</p> -->
+      </div>
+    </main>
+
+    <!-- JavaScript Link -->
+    <script src="script.js"></script>
+  </body>
+</html>
